@@ -2,10 +2,21 @@ package com.luciano.rumojr.domain;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+//a linha a baixo, indica que vamos usar o jpa
+@Entity
 public class Categoria implements Serializable {
 	
-	
+	//a linha a baixo serve para poder implementar o Serializable
 	private static final long serialVersionUID = 1L;
+	
+	//A linha a baixo, indica ao jpa que o campo Id é auto encremento, o anco que cuida
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String nome;
 	
